@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.text-uni {
+    color: #003399;
+}
+
+.nav-link {
+    color: #003399 !important;
+    font-size: 1rem;
+}
+
+.navbar-toggler-icon {
+    outline: #003399;
+}
+
+.form-container {
+    border: 0.3rem solid #003399;
+    background-image: linear-gradient(270deg, #003399, #2b56ac);
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+.btn-uni {
+    background-color: #3a5894 !important;
+    color: #fff !important;
+}
+
+#result {
+    font-style: italic;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 0.5rem;
+}
