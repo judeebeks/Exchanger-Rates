@@ -1,18 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("form").onsubmit = () => {
+        const options = {
+            method: "GET",
+            headers: { Accept: "application/json" },
+        };
         fetch(
-                "http://api.exchangeratesapi.io/v1/latest?access_key=96b45351a6188f08f13f7813dc2a0256"
+                "https://api.fastforex.io/fetch-all?api_key=1b025d2e71-117618aad8-r5kqjz",
+                options
             )
             .then((response) => response.json())
             .then((data) => {
                 const currency = document
                     .querySelector("#currency")
                     .value.toUpperCase();
-                const newBase = {...data, base: "USD" };
-                if (newBase.rates[currency] == undefined) {
+
+                if (data.results[currency] == undefined) {
                     document.querySelector("#result").innerHTML = "Invalid Currency";
                 } else {
-                    document.querySelector("#result").innerHTML = newBase.rates[currency];
+                    document.querySelector("#result").innerHTML =
+                        data.results[currency].toFixed(2);
                 }
             })
             .catch((error) => {
